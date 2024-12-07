@@ -16,6 +16,10 @@ RSpec.describe StringCalculator do
       expect(calculator.add("1,5")).to eq(6)
     end
 
+    it "raises an exception for wrong parameters" do
+      expect { calculator.add(1) }.to raise_error("Only string value is allowed in StringCalculator#add method parameter")
+    end
+
   end
 
 end
