@@ -20,6 +20,10 @@ RSpec.describe StringCalculator do
       expect { calculator.add(1) }.to raise_error("Only string value is allowed in StringCalculator#add method parameter")
     end
 
+    it "returns the sum of multiple numbers" do
+      expect(calculator.add("1,2,3,4")).to eq(10)
+    end
+
   end
 
 end
