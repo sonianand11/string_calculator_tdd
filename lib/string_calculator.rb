@@ -1,7 +1,8 @@
 class StringCalculator
   
   def add(string_numbers)
-    raise "Only string value is allowed in StringCalculator#add method parameter" unless string_numbers.is_a?(String)
+    
+    validate_parameters(string_numbers)
 
     return 0 if string_numbers == ""
 
@@ -14,6 +15,10 @@ class StringCalculator
 
   private
   
+  def validate_parameters(s_numbers)
+    raise "Only string value is allowed in StringCalculator#add method parameter" unless s_numbers.is_a?(String)
+  end
+
   def check_for_negative(s_numbers)
     # Check for negatives
     negatives = negatives(s_numbers)
