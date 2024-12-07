@@ -4,13 +4,18 @@ class StringCalculator
     raise "Only string value is allowed in StringCalculator#add method parameter" unless string_numbers.is_a?(String)
 
     return 0 if string_numbers == ""
-    
-    if string_numbers.include?("\n")
-      string_numbers = string_numbers.gsub("\n",",")
-    end
 
-    numbers = string_numbers.split(",").map(&:to_i)
+    numbers = digits(string_numbers)
     numbers.sum
   end
 
+  private
+  
+  def digits(s_numbers)
+    s_numbers.gsub("\n",delimiter).split(delimiter).map(&:to_i)
+  end
+
+  def delimiter
+    ","
+  end
 end
