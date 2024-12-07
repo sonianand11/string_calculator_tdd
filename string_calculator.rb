@@ -5,11 +5,25 @@ class StringCalculator
 
     return 0 if string_numbers == ""
 
-    digits(string_numbers).sum
+    _numbers = digits(string_numbers)
+
+    check_for_negative(_numbers)
+
+    _numbers.sum
   end
 
   private
   
+  def check_for_negative(s_numbers)
+    # Check for negatives
+    negatives = negatives(s_numbers)
+    raise "Negative numbers not allowed: #{negatives.join(', ')}" unless negatives.empty?
+  end
+
+  def negatives(s_numbers)
+    s_numbers.select { |num| num < 0 }
+  end
+
   def digits(s_numbers)
     _delimeter = delimiter(s_numbers)
     s_numbers.gsub("\n",_delimeter).split(_delimeter).map(&:to_i)
