@@ -47,8 +47,8 @@ The **String Calculator** is a simple Ruby program designed to demonstrate Test-
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/sonianand11/string-calculator-tdd.git
-   cd string-calculator-tdd
+   git clone git@github.com:sonianand11/string_calculator_tdd.git
+   cd string_calculator_tdd
    ```
 
 2. **Install Dependencies:**
@@ -99,13 +99,13 @@ require './lib/string_calculator'
 
 calculator = StringCalculator.new
 
-puts calculator.add(1)           # Output: Raise error Only string value is allowed in StringCalculator#add method parameter
-puts calculator.add("")           # Output: 0
-puts calculator.add("1")          # Output: 1
-puts calculator.add("1,5")        # Output: 6
-puts calculator.add("1\n2,3")     # Output: 6
-puts calculator.add("//;\n1;2")   # Output: 3
-puts calculator.add("//;\n1;2;-4")   # Output: Raise error Negative numbers not allowed: -4
+puts calculator.add(1)             # Output: Raise error Only string value is allowed in StringCalculator#add method parameter
+puts calculator.add("")            # Output: 0
+puts calculator.add("1")           # Output: 1
+puts calculator.add("1,5")         # Output: 6
+puts calculator.add("1\n2,3")      # Output: 6
+puts calculator.add("//;\n1;2")    # Output: 3
+puts calculator.add("//;\n1;2;-4") # Output: Raise error Negative numbers not allowed: -4
 ```
 
 ---
