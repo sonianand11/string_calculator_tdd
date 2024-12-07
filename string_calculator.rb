@@ -5,17 +5,18 @@ class StringCalculator
 
     return 0 if string_numbers == ""
 
-    numbers = digits(string_numbers)
-    numbers.sum
+    digits(string_numbers).sum
   end
 
   private
   
   def digits(s_numbers)
-    s_numbers.gsub("\n",delimiter).split(delimiter).map(&:to_i)
+    _delimeter = delimiter(s_numbers)
+    s_numbers.gsub("\n",_delimeter).split(_delimeter).map(&:to_i)
   end
 
-  def delimiter
-    ","
+  def delimiter(s_numbers)
+    s_numbers.start_with?("//") ?  s_numbers[2,1] : ","
   end
+
 end
